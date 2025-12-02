@@ -466,23 +466,6 @@ header {
   100% { background-position: 0% 50%; }
 }
 
-
-
-.about {
-  position: relative;
-  overflow: visible !important;
-}
-
-.about-circles .circle {
-  position: absolute;
-  border-radius: 50% !important;
-  opacity: 0.35;
-  pointer-events: none;
-  animation: circleFloat 6s ease-in-out infinite;
-  filter: blur(1px);
-}
-
-
 .about {
   position: relative;
   overflow: visible !important;
@@ -549,5 +532,122 @@ header {
 }
 
 
+.success-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-popup.show {
+  display: flex;
+}
+
+.success-popup-inner {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 320px;
+}
+
+.success-popup-close {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
+
+
+#contact {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffd0e8, #ffb9d9, #ffe4f3);
+  opacity: 0.55;
+  filter: blur(8px);
+  z-index: -1;
+}
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 79, 168, 0.25);
+  max-width: 800px;
+  margin: 30px auto;
+}
+.contact-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #ffb9d9;
+  padding: 12px 14px;
+  background: #fff;
+  transition: 0.25s ease;
+  color: #6b2b50;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff4fa8;
+  box-shadow: 0 0 8px rgba(255, 79, 168, 0.3);
+}
+.form-range {
+  height: 6px;
+  background: linear-gradient(90deg, #ff4fa8, #ffb9d9);
+  border-radius: 10px;
+}
+
+.form-range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ff4fa8;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(255, 79, 168, 0.4);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+
+.error-msg {
+  color: #ff4f7b;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+
+.form-control.error {
+  border-color: #ff4f7b !important;
+  box-shadow: 0 0 8px rgba(255, 79, 123, 0.35) !important;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.error-animate {
+  animation: shake 0.25s ease;
+}
+
+body {
+  overflow-x: hidden !important;
+}
 
 
