@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šviesoforo valdymo sistema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Šviesoforo valdymo sistema</h1>
+
+<div class="container">
+
+    <!-- CAR TRAFFIC LIGHT -->
+    <div class="traffic-light">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+        <div id="car-timer" class="timer">--</div>
+    </div>
+
+    <!-- PEDESTRIAN TRAFFIC LIGHT -->
+    <div class="ped-light">
+        <div id="ped-red" class="ped-signal"></div>
+        <div id="ped-green" class="ped-signal"></div>
+        <div id="ped-timer" class="timer">--</div>
+
+        <button id="ped-btn" onclick="requestPedestrian()">
+            Pėsčiųjų mygtukas
+        </button>
+    </div>
+
+</div>
+
+<!-- CONTROL PANEL -->
+<div class="panel">
+    <h2>Valdymo pultas</h2>
+    <button class="start-btn" onclick="startSystem()">Start</button>
+    <button class="stop-btn" onclick="stopSystem()">Stop</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
