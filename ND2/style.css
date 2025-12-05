@@ -11,7 +11,6 @@ h1 {
     color: #333;
 }
 
-/* -------------- LAYOUT -------------- */
 
 .container {
     display: flex;
@@ -20,7 +19,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* -------------- CAR LIGHT -------------- */
 
 .traffic-light {
     width: 120px;
@@ -42,7 +40,6 @@ h1 {
     transition: 0.25s;
 }
 
-/* STRONG GLOW FOR ACTIVE LIGHTS */
 .glow {
     box-shadow: 0 0 40px currentColor;
 }
@@ -60,7 +57,6 @@ h1 {
     margin-top: 10px;
 }
 
-/* -------------- PEDESTRIAN LIGHT -------------- */
 
 .ped-light {
     width: 120px;
@@ -82,7 +78,6 @@ h1 {
     transition: 0.25s;
 }
 
-/* Pedestrian button styling */
 #ped-btn {
     margin-top: 10px;
     padding: 10px;
@@ -105,13 +100,11 @@ h1 {
     100% { background: #ffcc00; }
 }
 
-/* Disabled button */
 #ped-btn.disabled {
     background: #777 !important;
     cursor: not-allowed !important;
 }
 
-/* Night mode blinking */
 .night-blink {
     animation: nightBlink 1s infinite;
 }
@@ -122,7 +115,6 @@ h1 {
     100% { background: yellow; box-shadow: 0 0 20px yellow; }
 }
 
-/* -------------- CONTROL PANEL -------------- */
 
 .panel {
     background: #fff4c2;
@@ -140,7 +132,6 @@ h1 {
     color: #5c4b25;
 }
 
-/* Buttons: soft orange tones */
 .start-btn,
 .stop-btn {
     width: 100%;

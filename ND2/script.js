@@ -3,7 +3,6 @@ let busy = false;
 let cycleTimeout = null;
 let countdownInterval = null;
 
-/* ELEMENTS */
 const red = document.getElementById("red");
 const yellow = document.getElementById("yellow");
 const green = document.getElementById("green");
@@ -14,7 +13,6 @@ const pedGreen = document.getElementById("ped-green");
 const pedTimer = document.getElementById("ped-timer");
 const pedBtn = document.getElementById("ped-btn");
 
-/* ---------------- RESET HELPERS ---------------- */
 
 function clearAllCountdowns() {
     clearInterval(countdownInterval);
@@ -106,7 +104,6 @@ function countdown(sec, el) {
     }, 1000);
 }
 
-/* ---------------- START SYSTEM ---------------- */
 
 function startSystem() {
     stopNightMode();
@@ -131,7 +128,6 @@ function startSystem() {
     startAuto();
 }
 
-/* ---------------- STOP SYSTEM (NIGHT MODE) ---------------- */
 
 function stopSystem() {
     stopAuto();
@@ -163,7 +159,6 @@ function stopNightMode() {
     busy = false;
 }
 
-/* ---------------- AUTO MODE ---------------- */
 
 function stopAuto() {
     clearAllTimeouts();
@@ -179,17 +174,14 @@ function startAuto() {
 function runAutoCycle() {
     if (!auto || busy) return;
 
-    // GREEN 5s
     setCar("green");
     countdown(5, carTimer);
 
     cycleTimeout = setTimeout(() => {
-        // YELLOW 2s
         setCar("yellow");
         countdown(2, carTimer);
 
         cycleTimeout = setTimeout(() => {
-            // RED 5s
             setCar("red");
             countdown(5, carTimer);
 
@@ -202,7 +194,6 @@ function runAutoCycle() {
     }, 5000);
 }
 
-/* ---------------- PEDESTRIAN REQUEST ---------------- */
 
 function requestPedestrian() {
     if (busy || pedBtn.disabled) return;
@@ -211,34 +202,28 @@ function requestPedestrian() {
     pedBtn.classList.add("blink");
     stopAuto();
 
-    // 1) Yellow
     setCar("yellow");
     countdown(2, carTimer);
 
     cycleTimeout = setTimeout(() => {
 
-        // 2) Red
         setCar("red");
         countdown(1, carTimer);
 
         cycleTimeout = setTimeout(() => {
 
-            // 3) After 1s → Pedestrian green
             setPed(true);
             countdown(5, pedTimer);
 
             cycleTimeout = setTimeout(() => {
 
-                // 4) Pedestrian red
                 setPed(false);
                 pedTimer.textContent = "--";
 
-                /* STOP BLINKING IMMEDIATELY WHEN PED TURNS RED */
                 pedBtn.classList.remove("blink");
 
                 cycleTimeout = setTimeout(() => {
 
-                    // 5) After 1s → Car green
                     setCar("green");
                     carTimer.textContent = "--";
 
@@ -256,7 +241,6 @@ function requestPedestrian() {
     }, 2000);
 }
 
-/* ---------------- INIT ---------------- */
 
 clearCar();
 clearPed();
