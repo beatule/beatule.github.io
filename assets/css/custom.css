@@ -650,4 +650,232 @@ body {
   overflow-x: hidden !important;
 }
 
+/* ===========================
+   MEMORY GAME – MANO ŽAIDIMAS
+   =========================== */
+
+.game.section {
+  padding-top: 60px;
+}
+
+.game .section-title p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.game-container {
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.game-panel {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 24px 28px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 79, 168, 0.18);
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.game-difficulty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.game-difficulty label {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.game-difficulty input[type="radio"] {
+  accent-color: #ff4fa8;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.game-buttons button {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.btn-game-primary {
+  background: linear-gradient(135deg, #ff4fa8, #ffb9d9);
+  color: #ffffff;
+  box-shadow: 0 8px 14px rgba(255, 79, 168, 0.35);
+}
+
+.btn-game-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(255, 79, 168, 0.45);
+}
+
+.btn-game-secondary {
+  background: #ffe5f3;
+  color: #8c2f64;
+  box-shadow: 0 6px 12px rgba(255, 185, 217, 0.55);
+}
+
+.btn-game-secondary:hover {
+  background: #ffd9ec;
+  transform: translateY(-1px);
+}
+
+.game-timer {
+  font-size: 0.9rem;
+  color: #8c2f64;
+  font-weight: 600;
+}
+
+/* Lenta */
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(var(--game-cols, 4), minmax(70px, 1fr));
+  gap: 12px;
+  justify-content: center;
+}
+
+.memory-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.memory-card:focus-visible {
+  outline: 2px solid #ff4fa8;
+  outline-offset: 2px;
+}
+
+.memory-card.matched {
+  cursor: default;
+}
+
+.memory-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.memory-card.flipped .card-inner,
+.memory-card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ffe5f3, #ffd9ec);
+  color: #8c2f64;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  font-size: 2.2rem;
+}
+
+/* Statistika */
+
+.game-stats {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 20px 22px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 79, 168, 0.18);
+}
+
+.game-stats h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.game-stats p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #a94f79;
+}
+
+.game-stats .stat-value {
+  font-weight: 700;
+  color: #8c2f64;
+}
+
+/* Pranešimai */
+
+.game-message {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.game-message-info {
+  color: #8c2f64;
+}
+
+.game-message-win {
+  color: #1ca57a;
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+  .game-panel {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .game-controls {
+    align-items: flex-start;
+  }
+
+  .game-buttons {
+    width: 100%;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(3, minmax(70px, 1fr));
+  }
+}
 

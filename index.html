@@ -1041,7 +1041,68 @@
 
     </section><!-- /Contact Section -->
 
+    <!-- Game Section -->
+    <section id="game" class="game section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Mano žaidimas</span>
+        <h2>Mano žaidimas</h2>
+        <p>Flip Card Memory žaidimas – surask visas kortelių poras kuo mažiau ėjimų!</p>
+      </div>
+
+      <div class="container game-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="game-panel">
+
+              <div class="game-controls">
+                <div class="game-difficulty">
+                  <span><strong>Sudėtingumas:</strong></span>
+                  <label>
+                    <input type="radio" name="game-difficulty" value="easy" checked>
+                    Lengvas (4×3)
+                  </label>
+                  <label>
+                    <input type="radio" name="game-difficulty" value="hard">
+                    Sunkus (6×4)
+                  </label>
+                </div>
+
+                <div class="game-buttons">
+                  <button id="game-start" type="button" class="btn-game-primary">Start</button>
+                  <button id="game-reset" type="button" class="btn-game-secondary">Atnaujinti</button>
+                  <div class="game-timer">
+                    Laikas: <span id="time-elapsed">00:00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="game-board" class="game-board" aria-label="Atminties kortelių žaidimo lenta"></div>
+
+              <div id="game-message" class="game-message"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="game-stats">
+              <h3>Statistika</h3>
+              <p>Ėjimai: <span id="move-count" class="stat-value">0</span></p>
+              <p>Sutapę poros: <span id="match-count" class="stat-value">0 / 0</span></p>
+
+              <hr>
+
+              <h3>Geriausi rezultatai</h3>
+              <p>Lengvas: <span id="best-easy" class="stat-value">–</span></p>
+              <p>Sunkus: <span id="best-hard" class="stat-value">–</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
+
 
   <footer id="footer" class="footer position-relative dark-background">
     <div class="container">
